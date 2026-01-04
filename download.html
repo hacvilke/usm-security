@@ -2,20 +2,9 @@
 <!--
 ────────────────────────────────────────────────────────────
  Universal Security Module (USM)
- © 2026 Brandon
+ © 2026 civ
 
  Licensed under the MIT License.
-
- Permission is granted to use, modify, and distribute this
- software under the terms of the MIT License.
-
- NOTICE:
- - Direct rebranding or claiming authorship is discouraged
- - Attribution is required for redistributions
- - This project exists to protect developers, not to be copied
-   without understanding or credit
-
- Build responsibly.
 ────────────────────────────────────────────────────────────
 -->
 <html lang="en">
@@ -24,18 +13,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Download • USM Roblox Security</title>
 
-  <meta name="description" content="Download Universal Security Module v2026.2 — Roblox server-side anti-exploit framework." />
-  <meta name="author" content="Brandon" />
+  <meta name="description" content="Download Universal Security Module for Roblox. Secure server-side anti-exploit framework." />
+  <meta name="author" content="civ" />
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
+  <!-- React CDN -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: Inter, system-ui, sans-serif;
       color: #e5e7eb;
@@ -44,6 +36,7 @@
         linear-gradient(180deg, #020617, #020617);
       min-height: 100vh;
     }
+
     header {
       padding: 28px 48px;
       display: flex;
@@ -51,9 +44,19 @@
       align-items: center;
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-    header h1 { font-size: 20px; font-weight: 800; letter-spacing: 0.04em; }
+
+    header h1 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
     header span { color: #6366f1; }
-    .glow { color: #6366f1; text-shadow: 0 0 18px rgba(99,102,241,0.6); }
+
+    .glow {
+      color: #6366f1;
+      text-shadow: 0 0 18px rgba(99,102,241,0.6);
+    }
 
     .nav {
       position: sticky;
@@ -68,70 +71,98 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
       margin-bottom: 40px;
     }
+
     .nav a {
-      position: relative;
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.02em;
       color: #9ca3af;
-      padding: 6px 4px;
-      transition: color 0.2s ease;
+      position: relative;
     }
-    .nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(99,102,241,0), rgba(99,102,241,0.8), rgba(99,102,241,0));
-      opacity: 0;
-      transform: scaleX(0.6);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-    .nav a:hover { color: #e5e7eb; }
-    .nav a:hover::after { opacity: 1; transform: scaleX(1); }
+
     .nav a.active { color: #a5b4fc; }
-    .nav a.active::after { opacity: 1; transform: scaleX(1); }
 
-    main { max-width: 1100px; margin: auto; padding: 32px; }
-
-    .hero { text-align: center; margin-bottom: 64px; }
-    .hero h2 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; margin-bottom: 24px; line-height: 1.1; }
-    .hero p { font-size: 18px; color: #9ca3af; max-width: 700px; margin: auto; }
-
-    .tag { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(99,102,241,0.15); color: #a5b4fc; font-size: 13px; margin-bottom: 20px; }
-
-    .download-section {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      text-align: center;
-      margin-top: 32px;
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 32px;
     }
-    .download-card {
+
+    .hero {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .hero h2 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #9ca3af;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(99,102,241,0.15);
+      color: #a5b4fc;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
       padding: 28px;
       transition: transform 0.25s ease, border-color 0.25s ease;
     }
-    .download-card:hover { transform: translateY(-6px); border-color: rgba(99,102,241,0.6); }
-    .download-card h3 { font-size: 20px; margin-bottom: 12px; }
-    .download-card p { color: #9ca3af; font-size: 15px; line-height: 1.5; }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(99,102,241,0.6);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
     .download-btn {
       display: inline-block;
-      padding: 14px 28px;
-      margin-top: 12px;
-      font-weight: 600;
-      color: #e5e7eb;
-      background: #6366f1;
-      border-radius: 12px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+      color: #020617;
+      font-weight: 700;
       text-decoration: none;
-      transition: background 0.2s ease;
+      font-size: 14px;
     }
-    .download-btn:hover { background: #4f46e5; }
+
+    .download-btn.disabled {
+      background: rgba(255,255,255,0.12);
+      color: #9ca3af;
+      cursor: not-allowed;
+    }
 
     footer {
       padding: 48px 32px;
@@ -161,7 +192,7 @@
 
 <footer>
   Universal Security Module v2026.2 • Server-Side Roblox Protection<br>
-  Not affiliated with or endorsed by Roblox Corporation.
+  Not affiliated with Roblox Corporation.
 </footer>
 
 <script>
@@ -169,27 +200,51 @@ const e = React.createElement;
 
 function App() {
   return e('div', null,
+
     e('section', { className: 'hero' },
-      e('div', { className: 'tag' }, 'DOWNLOAD CENTER'),
-      e('h2', null, 'Get Universal Security Module'),
+      e('div', { className: 'tag' }, 'OFFICIAL BUILDS'),
+      e('h2', null, 'Download USM'),
       e('p', null,
-        'Choose your preferred version below. Each version is server-side and optimized for performance and anti-exploit reliability.'
+        'Download stable and development builds of Universal Security Module. All releases are MIT licensed.'
       )
     ),
 
-    e('section', { className: 'download-section' },
-      downloadCard('USM v2026.2', 'Latest stable release with full anti-exploit framework.', 'download/usm_v2026.2.zip'),
-      downloadCard('USM v2025.9', 'Previous stable version, still supported for legacy servers.', 'download/usm_v2025.9.zip'),
-      downloadCard('USM Beta v2026.3-beta', 'Experimental features for advanced testing. Not recommended for live servers.', 'download/usm_v2026.3-beta.zip')
+    e('section', { className: 'grid' },
+
+      card(
+        'USM Stable Release',
+        'Recommended for live Roblox games. Fully tested, optimized, and production-safe.',
+        'DOWNLOAD_PLACEHOLDER_STABLE'
+      ),
+
+      card(
+        'USM Developer Build',
+        'Latest features and detection logic. May include experimental systems.',
+        'DOWNLOAD_PLACEHOLDER_DEV'
+      ),
+
+      card(
+        'Documentation Package',
+        'Offline documentation, examples, and setup references.',
+        'DOWNLOAD_PLACEHOLDER_DOCS'
+      ),
+
+      card(
+        'Checksums & Verification',
+        'SHA-256 hashes and file integrity verification for security-conscious developers.',
+        null
+      )
     )
   );
 }
 
-function downloadCard(title, desc, link) {
-  return e('div', { className: 'download-card' },
+function card(title, desc, link) {
+  return e('div', { className: 'card' },
     e('h3', null, title),
     e('p', null, desc),
-    e('a', { href: link, className: 'download-btn' }, 'Download')
+    link
+      ? e('a', { className: 'download-btn', href: link }, 'Download')
+      : e('span', { className: 'download-btn disabled' }, 'Coming Soon')
   );
 }
 
