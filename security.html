@@ -6,42 +6,36 @@
 
  Licensed under the MIT License.
 
+ Permission is granted to use, modify, and distribute this
+ software under the terms of the MIT License.
+
  NOTICE:
  - Direct rebranding or claiming authorship is discouraged
  - Attribution is required for redistributions
  - This project exists to protect developers, not to be copied
    without understanding or credit
+
+ Build responsibly.
 ────────────────────────────────────────────────────────────
 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>USM • Security</title>
+  <title>Security • USM Roblox Security</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Learn about Universal Security Module v2026.2 security features for Roblox developers." />
+  <meta name="description" content="Learn about the advanced security features of Universal Security Module for Roblox servers." />
   <meta name="author" content="civ" />
-  <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="USM Security" />
-  <meta property="og:description" content="Detailed overview of USM’s server-side anti-exploit and physics security features." />
-  <meta property="og:type" content="website" />
-
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <!-- REACT -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-  <!-- STYLE -->
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: Inter, system-ui, sans-serif;
       color: #e5e7eb;
@@ -50,20 +44,11 @@
         linear-gradient(180deg, #020617, #020617);
       min-height: 100vh;
     }
-
-    header {
-      padding: 28px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
+    header { padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
     header h1 { font-size: 20px; font-weight: 800; letter-spacing: 0.04em; }
     header span { color: #6366f1; }
     .glow { color: #6366f1; text-shadow: 0 0 18px rgba(99,102,241,0.6); }
 
-    /* NAVIGATION */
     .nav {
       position: sticky;
       top: 0;
@@ -74,11 +59,9 @@
       padding: 14px 24px;
       background: rgba(2,6,23,0.75);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
       margin-bottom: 40px;
     }
-
     .nav a {
       position: relative;
       text-decoration: none;
@@ -89,7 +72,6 @@
       padding: 6px 4px;
       transition: color 0.2s ease;
     }
-
     .nav a::after {
       content: "";
       position: absolute;
@@ -102,7 +84,6 @@
       transform: scaleX(0.6);
       transition: opacity 0.25s ease, transform 0.25s ease;
     }
-
     .nav a:hover { color: #e5e7eb; }
     .nav a:hover::after { opacity: 1; transform: scaleX(1); }
     .nav a.active { color: #a5b4fc; }
@@ -114,8 +95,9 @@
     .hero h2 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; margin-bottom: 24px; line-height: 1.1; }
     .hero p { font-size: 18px; color: #9ca3af; max-width: 700px; margin: auto; }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .tag { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(99,102,241,0.15); color: #a5b4fc; font-size: 13px; margin-bottom: 20px; }
 
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
     .card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
@@ -127,7 +109,16 @@
     .card h3 { font-size: 20px; margin-bottom: 12px; }
     .card p { color: #9ca3af; font-size: 15px; line-height: 1.5; }
 
-    .notice { margin-top: 64px; font-size: 14px; color: #9ca3af; text-align: center; max-width: 800px; margin-left:auto; margin-right:auto; line-height:1.6; }
+    .notice {
+      margin-top: 64px;
+      font-size: 14px;
+      color: #9ca3af;
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
 
     footer { padding: 48px 32px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #6b7280; font-size: 14px; }
   </style>
@@ -157,27 +148,27 @@
 <script>
 const e = React.createElement;
 
-function SecurityApp() {
+function App() {
   return e('div', null,
     e('section', { className: 'hero' },
-      e('div', { className: 'tag' }, 'SECURITY FEATURES'),
-      e('h2', null, 'Universal Security Module Protection'),
+      e('div', { className: 'tag' }, 'SECURITY OVERVIEW'),
+      e('h2', null, 'USM Security Features'),
       e('p', null,
-        'USM provides advanced server-side anti-exploit protections for Roblox developers. Each feature ensures your game is protected against speed hacks, flying exploits, noclipping, and more.'
+        'Universal Security Module is built to protect Roblox servers from exploits, cheats, and physics manipulation with a server-authoritative framework.'
       )
     ),
 
     e('section', { className: 'grid' },
-      feature('Acceleration & Speed Detection', 'Tracks player movement velocities on the server and flags impossible speeds automatically.'),
-      feature('Fly & No-Clip Protection', 'Server-side raycasts and humanoid state checks prevent flying or passing through objects.'),
-      feature('Strike Decay Enforcement', 'Flags decay over time to reduce false positives caused by lag or respawns.'),
-      feature('Universe Ban Integration', 'Optionally ban repeat offenders permanently, including linked alternate accounts.'),
-      feature('Teleport & Respawn Grace', 'Scripted teleports or respawns do not trigger false detections.'),
-      feature('Optimized for Performance', 'Engineered to handle large servers without frame drops or excessive resource use.')
+      feature('Server-Side Authority', 'All movement, damage, and events are validated on the server. Clients cannot bypass logic.'),
+      feature('Anti-Cheat Detection', 'Real-time detection of speed hacks, fly, no-clip, and teleport exploits.'),
+      feature('Strike & Decay System', 'Intelligent escalation ensures fair enforcement without false positives for laggy players.'),
+      feature('BanAsync Integration', 'Universe-wide bans for verified exploiters using Roblox\'s BanAsync system.'),
+      feature('Teleport & Respawn Validation', 'Players teleporting or respawning are verified to prevent false positives.'),
+      feature('Optimized for Scale', 'Efficient checks to handle hundreds of players without server lag.')
     ),
 
     e('div', { className: 'notice' },
-      'MIT Licensed. Redistribution requires attribution. Misrepresentation of authorship or branding is discouraged.'
+      'MIT Licensed. Attribution required when reusing. Built with security and performance in mind.'
     )
   );
 }
@@ -189,7 +180,7 @@ function feature(title, desc) {
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(e(SecurityApp));
+ReactDOM.createRoot(document.getElementById('root')).render(e(App));
 </script>
 
 </body>
