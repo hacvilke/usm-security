@@ -19,3 +19,51 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+You are allowed to:
+- Use
+- Modify
+- Distribute
+- Learn from the code
+
+**Attribution is required.**
+
+See `LICENSE` for full terms.
+
+---
+
+## ⚠️ Notice on Reuse
+
+While MIT allows reuse, **direct rebranding or misrepresentation** of this project as your own original work is discouraged.
+
+If you build upon USM, please:
+- Credit the original author
+- Clearly state your modifications
+- Do not impersonate the project or its branding
+
+---
+
+## 🛠️ Disclaimer
+
+USM is a **defensive security framework**, not a guarantee against all exploits.
+
+No anti-cheat system is perfect.  
+USM is designed to **raise the cost of exploitation**, not claim absolute prevention.
+
+---
+
+## 👤 Author
+
+**civ**  
+Roblox Developer • Security & Systems Design  
+
+---
+
+🛡️ *Secure your game. Control your physics.*
