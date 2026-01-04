@@ -2,46 +2,40 @@
 <!--
 ────────────────────────────────────────────────────────────
  Universal Security Module (USM)
- © 2026 civ
+ © 2026 Brandon
 
  Licensed under the MIT License.
+
+ Permission is granted to use, modify, and distribute this
+ software under the terms of the MIT License.
 
  NOTICE:
  - Direct rebranding or claiming authorship is discouraged
  - Attribution is required for redistributions
  - This project exists to protect developers, not to be copied
    without understanding or credit
+
+ Build responsibly.
 ────────────────────────────────────────────────────────────
 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>USM • Download</title>
+  <title>Download • USM Roblox Security</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Download the latest Universal Security Module v2026.2 for Roblox developers. Server-side anti-exploit & physics security." />
-  <meta name="author" content="civ" />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Download Universal Security Module v2026.2 — Roblox server-side anti-exploit framework." />
+  <meta name="author" content="Brandon" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="USM Download" />
-  <meta property="og:description" content="Get the latest Universal Security Module for Roblox developers with server-side security and anti-exploit features." />
-  <meta property="og:type" content="website" />
-
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <!-- REACT -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-  <!-- STYLE -->
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: Inter, system-ui, sans-serif;
       color: #e5e7eb;
@@ -50,7 +44,6 @@
         linear-gradient(180deg, #020617, #020617);
       min-height: 100vh;
     }
-
     header {
       padding: 28px 48px;
       display: flex;
@@ -58,12 +51,10 @@
       align-items: center;
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-
     header h1 { font-size: 20px; font-weight: 800; letter-spacing: 0.04em; }
     header span { color: #6366f1; }
     .glow { color: #6366f1; text-shadow: 0 0 18px rgba(99,102,241,0.6); }
 
-    /* NAVIGATION */
     .nav {
       position: sticky;
       top: 0;
@@ -74,11 +65,9 @@
       padding: 14px 24px;
       background: rgba(2,6,23,0.75);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
       margin-bottom: 40px;
     }
-
     .nav a {
       position: relative;
       text-decoration: none;
@@ -89,7 +78,6 @@
       padding: 6px 4px;
       transition: color 0.2s ease;
     }
-
     .nav a::after {
       content: "";
       position: absolute;
@@ -102,7 +90,6 @@
       transform: scaleX(0.6);
       transition: opacity 0.25s ease, transform 0.25s ease;
     }
-
     .nav a:hover { color: #e5e7eb; }
     .nav a:hover::after { opacity: 1; transform: scaleX(1); }
     .nav a.active { color: #a5b4fc; }
@@ -114,37 +101,45 @@
     .hero h2 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; margin-bottom: 24px; line-height: 1.1; }
     .hero p { font-size: 18px; color: #9ca3af; max-width: 700px; margin: auto; }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .tag { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(99,102,241,0.15); color: #a5b4fc; font-size: 13px; margin-bottom: 20px; }
 
-    .card {
+    .download-section {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .download-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
       padding: 28px;
       transition: transform 0.25s ease, border-color 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
-    .card:hover { transform: translateY(-6px); border-color: rgba(99,102,241,0.6); }
-    .card h3 { font-size: 20px; margin-bottom: 12px; }
-    .card p { color: #9ca3af; font-size: 15px; line-height: 1.5; }
-    .card a.download-btn {
-      margin-top: 16px;
-      text-decoration: none;
-      background: #6366f1;
-      color: #fff;
+    .download-card:hover { transform: translateY(-6px); border-color: rgba(99,102,241,0.6); }
+    .download-card h3 { font-size: 20px; margin-bottom: 12px; }
+    .download-card p { color: #9ca3af; font-size: 15px; line-height: 1.5; }
+    .download-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      margin-top: 12px;
       font-weight: 600;
-      padding: 10px 16px;
+      color: #e5e7eb;
+      background: #6366f1;
       border-radius: 12px;
-      text-align: center;
-      transition: background 0.25s ease;
+      text-decoration: none;
+      transition: background 0.2s ease;
     }
-    .card a.download-btn:hover { background: #4f46e5; }
+    .download-btn:hover { background: #4f46e5; }
 
-    .notice { margin-top: 64px; font-size: 14px; color: #9ca3af; text-align: center; max-width: 800px; margin-left:auto; margin-right:auto; line-height:1.6; }
-
-    footer { padding: 48px 32px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #6b7280; font-size: 14px; }
+    footer {
+      padding: 48px 32px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: #6b7280;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -172,38 +167,33 @@
 <script>
 const e = React.createElement;
 
-function DownloadApp() {
+function App() {
   return e('div', null,
     e('section', { className: 'hero' },
-      e('div', { className: 'tag' }, 'DOWNLOAD USM'),
+      e('div', { className: 'tag' }, 'DOWNLOAD CENTER'),
       e('h2', null, 'Get Universal Security Module'),
       e('p', null,
-        'Download the latest stable version of USM for your Roblox game. Includes all server-side security features, anti-exploit detection, and installation instructions.'
+        'Choose your preferred version below. Each version is server-side and optimized for performance and anti-exploit reliability.'
       )
     ),
 
-    e('section', { className: 'grid' },
-      feature('v2026.2 Stable', 'Latest stable release with full anti-exploit protections.', 'https://example.com/usm-v2026.2.zip'),
-      feature('v2026.1 Legacy', 'Previous version with proven stability and core security modules.', 'https://example.com/usm-v2026.1.zip'),
-      feature('Installation Guide', 'Step-by-step instructions to integrate USM into your Roblox game server.', 'https://example.com/usm-install-guide.pdf'),
-      feature('Changelog', 'View detailed changes, fixes, and improvements in the latest releases.', 'https://example.com/usm-changelog.pdf')
-    ),
-
-    e('div', { className: 'notice' },
-      'All downloads are MIT Licensed. Attribution required for redistribution. Do not modify branding or claim ownership.'
+    e('section', { className: 'download-section' },
+      downloadCard('USM v2026.2', 'Latest stable release with full anti-exploit framework.', 'download/usm_v2026.2.zip'),
+      downloadCard('USM v2025.9', 'Previous stable version, still supported for legacy servers.', 'download/usm_v2025.9.zip'),
+      downloadCard('USM Beta v2026.3-beta', 'Experimental features for advanced testing. Not recommended for live servers.', 'download/usm_v2026.3-beta.zip')
     )
   );
 }
 
-function feature(title, desc, link) {
-  return e('div', { className: 'card' },
+function downloadCard(title, desc, link) {
+  return e('div', { className: 'download-card' },
     e('h3', null, title),
     e('p', null, desc),
-    e('a', { href: link, className: 'download-btn', target: '_blank' }, 'Download')
+    e('a', { href: link, className: 'download-btn' }, 'Download')
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(e(DownloadApp));
+ReactDOM.createRoot(document.getElementById('root')).render(e(App));
 </script>
 
 </body>
