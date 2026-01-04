@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 ────────────────────────────────────────────────────────────
- Universal Security Module (USM) • Security
+ Universal Security Module (USM)
  © 2026 civ
 
  Licensed under the MIT License.
@@ -20,13 +20,13 @@
   <title>USM • Security</title>
 
   <!-- SEO -->
-  <meta name="description" content="Universal Security Module v2026.2 — Server-side Roblox security, anti-exploit, and ban system." />
+  <meta name="description" content="Learn about Universal Security Module v2026.2 security features for Roblox developers." />
   <meta name="author" content="civ" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="USM Security" />
-  <meta property="og:description" content="Learn about the security features of Universal Security Module for Roblox developers." />
+  <meta property="og:description" content="Detailed overview of USM’s server-side anti-exploit and physics security features." />
   <meta property="og:type" content="website" />
 
   <!-- FONTS -->
@@ -160,24 +160,24 @@ const e = React.createElement;
 function SecurityApp() {
   return e('div', null,
     e('section', { className: 'hero' },
-      e('div', { className: 'tag' }, 'SECURITY • FEATURES'),
-      e('h2', null, 'USM Security Overview'),
-      e('p', null, 'Learn how USM protects your Roblox game from exploits, speed hacks, fly/no-clip, and unauthorized scripts with server-side validation.')
+      e('div', { className: 'tag' }, 'SECURITY FEATURES'),
+      e('h2', null, 'Universal Security Module Protection'),
+      e('p', null,
+        'USM provides advanced server-side anti-exploit protections for Roblox developers. Each feature ensures your game is protected against speed hacks, flying exploits, noclipping, and more.'
+      )
     ),
 
     e('section', { className: 'grid' },
-      feature('Acceleration-Based Detection', 'Detects impossible movement patterns and speed hacks by validating player physics on the server.'),
-      feature('Fly & No-Clip Protection', 'Server-side air-time and ground raycast checks prevent flying, noclipping, and wall traversal exploits.'),
-      feature('Strike Decay System', 'Intelligent strike escalation with decay ensures lag does not cause false positives while maintaining strict enforcement.'),
-      feature('Universe Ban Support', 'Automatic permanent bans using Roblox BanAsync with alt account detection and linked account enforcement.'),
-      feature('Teleport Grace Windows', 'Respawns or scripted teleports are ignored for a short window to prevent accidental bans.'),
-      feature('Optimized for Scale', 'Server-side calculations are optimized to handle large multiplayer games without lag or FPS drops.'),
-      feature('Remote Event Spam Detection', 'Detects excessive remote calls to prevent exploit scripts from flooding the server.'),
-      feature('Customizable Flags', 'Set violation thresholds and ban behavior to fit your game environment and risk tolerance.')
+      feature('Acceleration & Speed Detection', 'Tracks player movement velocities on the server and flags impossible speeds automatically.'),
+      feature('Fly & No-Clip Protection', 'Server-side raycasts and humanoid state checks prevent flying or passing through objects.'),
+      feature('Strike Decay Enforcement', 'Flags decay over time to reduce false positives caused by lag or respawns.'),
+      feature('Universe Ban Integration', 'Optionally ban repeat offenders permanently, including linked alternate accounts.'),
+      feature('Teleport & Respawn Grace', 'Scripted teleports or respawns do not trigger false detections.'),
+      feature('Optimized for Performance', 'Engineered to handle large servers without frame drops or excessive resource use.')
     ),
 
     e('div', { className: 'notice' },
-      'USM is MIT Licensed. Always provide attribution. Do not claim ownership or redistribute without credit.'
+      'MIT Licensed. Redistribution requires attribution. Misrepresentation of authorship or branding is discouraged.'
     )
   );
 }
