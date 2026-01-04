@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
 ────────────────────────────────────────────────────────────
- Universal Security Module (USM) • About
- © 2026 Brandon
+ Universal Security Module (USM)
+ © 2026 civ
 
  Licensed under the MIT License.
 
@@ -20,13 +20,13 @@
   <title>USM • About</title>
 
   <!-- SEO -->
-  <meta name="description" content="About Universal Security Module — Advanced Roblox server-side security framework and anti-exploit system." />
-  <meta name="author" content="Brandon" />
+  <meta name="description" content="Learn more about Universal Security Module, its mission, and development." />
+  <meta name="author" content="civ" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="USM About" />
-  <meta property="og:description" content="Learn about the team, purpose, and mission behind Universal Security Module for Roblox developers." />
+  <meta property="og:description" content="About Universal Security Module and its mission to protect Roblox developers." />
   <meta property="og:type" content="website" />
 
   <!-- FONTS -->
@@ -163,21 +163,22 @@ function AboutApp() {
       e('div', { className: 'tag' }, 'ABOUT USM'),
       e('h2', null, 'About Universal Security Module'),
       e('p', null,
-        'Universal Security Module (USM) is a server-side Roblox security framework designed for developers who want to protect their games from exploits, hacks, and unauthorized modifications. USM enforces physics validation, speed detection, fly/no-clip checks, and automated banning of malicious users.'
+        'Universal Security Module (USM) is a server-side anti-exploit framework designed for Roblox developers. ' +
+        'Our mission is to provide fast, accurate, and scalable protection against cheats and physics exploits, while keeping game performance optimal.'
       )
     ),
 
     e('section', { className: 'grid' },
-      feature('Mission', 'To empower Roblox developers with robust, server-authoritative security tools that prevent exploits while preserving player experience.'),
-      feature('Vision', 'A Roblox ecosystem where games are safeguarded against hacks, providing fair and fun gameplay for all users.'),
-      feature('Author', 'Created and maintained by Brandon, a Roblox developer focused on security and performance.'),
-      feature('License', 'USM is MIT Licensed, allowing reuse with attribution while discouraging unauthorized copying or rebranding.'),
-      feature('Community', 'USM encourages responsible use, contributions, and feedback from Roblox developers to improve security over time.'),
-      feature('History', 'Version 2026.2 includes major improvements in speed detection, universe ban support, and strike decay systems, building upon previous releases for maximum reliability.')
+      feature('Mission', 'Protect Roblox developers by offering server-authoritative tools to detect and prevent cheating.'),
+      feature('Development', 'Continuously updated with community feedback and new exploit detection techniques.'),
+      feature('Licensing', 'MIT licensed, allowing redistribution with proper attribution. Misrepresentation of authorship is discouraged.'),
+      feature('Community', 'Supportive developer community sharing tips and resources for secure Roblox game creation.'),
+      feature('Updates', 'Regular updates ensure compatibility with Roblox platform changes and new exploit methods.'),
+      feature('Vision', 'To create a safe environment where developers can focus on game design without worrying about cheaters.')
     ),
 
     e('div', { className: 'notice' },
-      'MIT Licensed. Reuse permitted with attribution. Do not claim ownership or redistribute without credit.'
+      'MIT Licensed. Redistribution requires attribution. Misrepresentation of authorship or branding is discouraged.'
     )
   );
 }
