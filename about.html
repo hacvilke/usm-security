@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--
+────────────────────────────────────────────────────────────
+ Universal Security Module (USM) • About
+ © 2026 Brandon
+
+ Licensed under the MIT License.
+
+ NOTICE:
+ - Direct rebranding or claiming authorship is discouraged
+ - Attribution is required for redistributions
+ - This project exists to protect developers, not to be copied
+   without understanding or credit
+────────────────────────────────────────────────────────────
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>USM • About</title>
+
+  <!-- SEO -->
+  <meta name="description" content="About Universal Security Module — Advanced Roblox server-side security framework and anti-exploit system." />
+  <meta name="author" content="Brandon" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="USM About" />
+  <meta property="og:description" content="Learn about the team, purpose, and mission behind Universal Security Module for Roblox developers." />
+  <meta property="og:type" content="website" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- REACT -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- STYLE -->
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      color: #e5e7eb;
+      background:
+        radial-gradient(900px 420px at 50% 18%, rgba(99,102,241,0.22), transparent 60%),
+        linear-gradient(180deg, #020617, #020617);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    header h1 { font-size: 20px; font-weight: 800; letter-spacing: 0.04em; }
+    header span { color: #6366f1; }
+    .glow { color: #6366f1; text-shadow: 0 0 18px rgba(99,102,241,0.6); }
+
+    /* NAVIGATION */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      padding: 14px 24px;
+      background: rgba(2,6,23,0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 40px;
+    }
+
+    .nav a {
+      position: relative;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #9ca3af;
+      padding: 6px 4px;
+      transition: color 0.2s ease;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(99,102,241,0), rgba(99,102,241,0.8), rgba(99,102,241,0));
+      opacity: 0;
+      transform: scaleX(0.6);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav a:hover { color: #e5e7eb; }
+    .nav a:hover::after { opacity: 1; transform: scaleX(1); }
+    .nav a.active { color: #a5b4fc; }
+    .nav a.active::after { opacity: 1; transform: scaleX(1); }
+
+    main { max-width: 1100px; margin: auto; padding: 32px; }
+
+    .hero { text-align: center; margin-bottom: 64px; }
+    .hero h2 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; margin-bottom: 24px; line-height: 1.1; }
+    .hero p { font-size: 18px; color: #9ca3af; max-width: 700px; margin: auto; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .card:hover { transform: translateY(-6px); border-color: rgba(99,102,241,0.6); }
+    .card h3 { font-size: 20px; margin-bottom: 12px; }
+    .card p { color: #9ca3af; font-size: 15px; line-height: 1.5; }
+
+    .notice { margin-top: 64px; font-size: 14px; color: #9ca3af; text-align: center; max-width: 800px; margin-left:auto; margin-right:auto; line-height:1.6; }
+
+    footer { padding: 48px 32px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #6b7280; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>USM<span>.SEC</span></h1>
+  <div class="glow">Roblox Dev Security</div>
+</header>
+
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="docs.html">Docs</a>
+  <a href="download.html">Download</a>
+  <a href="security.html">Security</a>
+  <a href="about.html" class="active">About</a>
+</nav>
+
+<main id="root"></main>
+
+<footer>
+  Universal Security Module v2026.2 • Server-Side Roblox Protection<br>
+  Not affiliated with or endorsed by Roblox Corporation.
+</footer>
+
+<script>
+const e = React.createElement;
+
+function AboutApp() {
+  return e('div', null,
+    e('section', { className: 'hero' },
+      e('div', { className: 'tag' }, 'ABOUT USM'),
+      e('h2', null, 'About Universal Security Module'),
+      e('p', null,
+        'Universal Security Module (USM) is a server-side Roblox security framework designed for developers who want to protect their games from exploits, hacks, and unauthorized modifications. USM enforces physics validation, speed detection, fly/no-clip checks, and automated banning of malicious users.'
+      )
+    ),
+
+    e('section', { className: 'grid' },
+      feature('Mission', 'To empower Roblox developers with robust, server-authoritative security tools that prevent exploits while preserving player experience.'),
+      feature('Vision', 'A Roblox ecosystem where games are safeguarded against hacks, providing fair and fun gameplay for all users.'),
+      feature('Author', 'Created and maintained by Brandon, a Roblox developer focused on security and performance.'),
+      feature('License', 'USM is MIT Licensed, allowing reuse with attribution while discouraging unauthorized copying or rebranding.'),
+      feature('Community', 'USM encourages responsible use, contributions, and feedback from Roblox developers to improve security over time.'),
+      feature('History', 'Version 2026.2 includes major improvements in speed detection, universe ban support, and strike decay systems, building upon previous releases for maximum reliability.')
+    ),
+
+    e('div', { className: 'notice' },
+      'MIT Licensed. Reuse permitted with attribution. Do not claim ownership or redistribute without credit.'
+    )
+  );
+}
+
+function feature(title, desc) {
+  return e('div', { className: 'card' },
+    e('h3', null, title),
+    e('p', null, desc)
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(e(AboutApp));
+</script>
+
+</body>
+</html>
