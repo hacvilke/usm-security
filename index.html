@@ -6,9 +6,6 @@
 
  Licensed under the MIT License.
 
- Permission is granted to use, modify, and distribute this
- software under the terms of the MIT License.
-
  NOTICE:
  - Direct rebranding or claiming authorship is discouraged
  - Attribution is required for redistributions
@@ -39,11 +36,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <!-- REACT (CDN) -->
+  <!-- REACT -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-  <!-- STYLE -->
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -64,20 +60,9 @@
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    header h1 {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
-
-    header span {
-      color: #6366f1;
-    }
-
-    .glow {
-      color: #6366f1;
-      text-shadow: 0 0 18px rgba(99,102,241,0.6);
-    }
+    header h1 { font-size: 20px; font-weight: 800; letter-spacing: 0.04em; }
+    header span { color: #6366f1; }
+    .glow { color: #6366f1; text-shadow: 0 0 18px rgba(99,102,241,0.6); }
 
     /* NAVIGATION */
     .nav {
@@ -88,7 +73,7 @@
       justify-content: center;
       gap: 28px;
       padding: 14px 24px;
-      background: rgba(2, 6, 23, 0.75);
+      background: rgba(2,6,23,0.75);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -119,48 +104,16 @@
       transition: opacity 0.25s ease, transform 0.25s ease;
     }
 
-    .nav a:hover {
-      color: #e5e7eb;
-    }
+    .nav a:hover { color: #e5e7eb; }
+    .nav a:hover::after { opacity: 1; transform: scaleX(1); }
+    .nav a.active { color: #a5b4fc; }
+    .nav a.active::after { opacity: 1; transform: scaleX(1); }
 
-    .nav a:hover::after {
-      opacity: 1;
-      transform: scaleX(1);
-    }
+    main { max-width: 1100px; margin: auto; padding: 32px; }
 
-    .nav a.active {
-      color: #a5b4fc;
-    }
-
-    .nav a.active::after {
-      opacity: 1;
-      transform: scaleX(1);
-    }
-
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 32px;
-    }
-
-    .hero {
-      text-align: center;
-      margin-bottom: 96px;
-    }
-
-    .hero h2 {
-      font-size: clamp(36px, 6vw, 64px);
-      font-weight: 800;
-      margin-bottom: 24px;
-      line-height: 1.1;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #9ca3af;
-      max-width: 700px;
-      margin: auto;
-    }
+    .hero { text-align: center; margin-bottom: 96px; }
+    .hero h2 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; margin-bottom: 24px; line-height: 1.1; }
+    .hero p { font-size: 18px; color: #9ca3af; max-width: 700px; margin: auto; }
 
     .tag {
       display: inline-block;
@@ -191,15 +144,27 @@
       border-color: rgba(99,102,241,0.6);
     }
 
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
+    .card h3 { font-size: 20px; margin-bottom: 12px; }
+    .card p { color: #9ca3af; font-size: 15px; line-height: 1.5; }
+
+    .cta {
+      margin-top: 60px;
+      text-align: center;
     }
 
-    .card p {
-      color: #9ca3af;
-      font-size: 15px;
-      line-height: 1.5;
+    .cta a {
+      display: inline-block;
+      padding: 14px 28px;
+      font-weight: 600;
+      color: #e5e7eb;
+      background: #6366f1;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .cta a:hover {
+      background: #4f46e5;
     }
 
     .notice {
@@ -266,9 +231,12 @@ function App() {
       feature('Optimized For Scale', 'Designed for large servers without frame drops.')
     ),
 
+    e('div', { className: 'cta' },
+      e('a', { href: 'download.html' }, 'Download USM Now')
+    ),
+
     e('div', { className: 'notice' },
-      'MIT Licensed. Reuse permitted with attribution. ',
-      'Misrepresentation of authorship or branding is discouraged.'
+      'MIT Licensed. Reuse permitted with attribution. Misrepresentation of authorship or branding is discouraged.'
     )
   );
 }
