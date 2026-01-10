@@ -3,7 +3,6 @@
 ────────────────────────────────────────────────────────────
  Universal Security Module (USM)
  © 2026 civ
-
  Licensed under the MIT License.
 ────────────────────────────────────────────────────────────
 -->
@@ -16,12 +15,10 @@
   <meta name="description" content="Download Universal Security Module for Roblox. Secure server-side anti-exploit framework." />
   <meta name="author" content="civ" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <!-- React CDN -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
@@ -77,7 +74,6 @@
       font-size: 14px;
       font-weight: 600;
       color: #9ca3af;
-      position: relative;
     }
 
     .nav a.active { color: #a5b4fc; }
@@ -127,24 +123,6 @@
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
       padding: 28px;
-      transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(99,102,241,0.6);
-    }
-
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      font-size: 15px;
-      color: #9ca3af;
-      line-height: 1.5;
-      margin-bottom: 16px;
     }
 
     .download-btn {
@@ -156,12 +134,6 @@
       font-weight: 700;
       text-decoration: none;
       font-size: 14px;
-    }
-
-    .download-btn.disabled {
-      background: rgba(255,255,255,0.12);
-      color: #9ca3af;
-      cursor: not-allowed;
     }
 
     footer {
@@ -198,53 +170,47 @@
 <script>
 const e = React.createElement;
 
+function card(title, desc, link) {
+  return e('div', { className: 'card' },
+    e('h3', null, title),
+    e('p', null, desc),
+    e('a', {
+      className: 'download-btn',
+      href: link,
+      download: true
+    }, 'Download')
+  );
+}
+
 function App() {
   return e('div', null,
 
     e('section', { className: 'hero' },
-      e('div', { className: 'tag' }, 'OFFICIAL BUILDS'),
+      e('div', { className: 'tag' }, 'OFFICIAL BUILD'),
       e('h2', null, 'Download USM'),
-      e('p', null,
-        'Download stable and development builds of Universal Security Module. All releases are MIT licensed.'
-      )
+      e('p', null, 'Secure, server-side anti-exploit framework for Roblox.')
     ),
 
     e('section', { className: 'grid' },
 
       card(
         'USM Stable Release',
-        'Recommended for live Roblox games. Fully tested, optimized, and production-safe.',
-        'DOWNLOAD_PLACEHOLDER_STABLE'
+        'Recommended for live games. Fully tested and production-ready.',
+        'downloads/usm-v2026.2.lua'
       ),
 
       card(
         'USM Developer Build',
-        'Latest features and detection logic. May include experimental systems.',
-        '<a href="downloads/usm-v2026.2.lua" download>'
+        'Latest detection logic and experimental systems.',
+        'downloads/usm-v2026.2.lua'
       ),
 
       card(
         'Documentation Package',
-        'Offline documentation, examples, and setup references.',
-        'DOWNLOAD_PLACEHOLDER_DOCS'
-      ),
-
-      card(
-        'Checksums & Verification',
-        'SHA-256 hashes and file integrity verification for security-conscious developers.',
-        null
+        'Offline docs and setup guides.',
+        'downloads/usm-docs.pdf'
       )
     )
-  );
-}
-
-function card(title, desc, link) {
-  return e('div', { className: 'card' },
-    e('h3', null, title),
-    e('p', null, desc),
-    link
-      ? e('a', { className: 'download-btn', href: link }, 'Download')
-      : e('span', { className: 'download-btn disabled' }, 'Coming Soon')
   );
 }
 
