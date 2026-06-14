@@ -121,6 +121,98 @@
     }
 
     footer { padding: 48px 32px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #6b7280; font-size: 14px; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #e5e7eb;
+    }
+
+    .detection-layers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .detection-item {
+      padding: 24px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 16px;
+    }
+
+    .detection-item h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #a5b4fc;
+    }
+
+    .detection-item p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .principle-item {
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+    }
+
+    .principle-item h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #e5e7eb;
+    }
+
+    .principle-item p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    .response-system {
+      max-width: 800px;
+      margin: 0 auto 64px;
+    }
+
+    .response-item {
+      display: flex;
+      gap: 24px;
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+
+    .response-score {
+      width: 200px;
+      font-weight: 700;
+      color: #a5b4fc;
+      flex-shrink: 0;
+    }
+
+    .response-action {
+      flex: 1;
+      color: #9ca3af;
+    }
   </style>
 </head>
 <body>
@@ -151,24 +243,62 @@ const e = React.createElement;
 function App() {
   return e('div', null,
     e('section', { className: 'hero' },
-      e('div', { className: 'tag' }, 'SECURITY OVERVIEW'),
+      e('div', { className: 'tag' }, 'SECURITY ARCHITECTURE'),
       e('h2', null, 'USM Security Features'),
       e('p', null,
-        'Universal Security Module is built to protect Roblox servers from exploits, cheats, and physics manipulation with a server-authoritative framework.'
+        'Universal Security Module provides comprehensive server-side protection with multiple layers of detection, behavioral analysis, and automated response systems.'
       )
     ),
 
-    e('section', { className: 'grid' },
-      feature('Server-Side Authority', 'All movement, damage, and events are validated on the server. Clients cannot bypass logic.'),
-      feature('Anti-Cheat Detection', 'Real-time detection of speed hacks, fly, no-clip, and teleport exploits.'),
-      feature('Strike & Decay System', 'Intelligent escalation ensures fair enforcement without false positives for laggy players.'),
-      feature('BanAsync Integration', 'Universe-wide bans for verified exploiters using Roblox\'s BanAsync system.'),
-      feature('Teleport & Respawn Validation', 'Players teleporting or respawning are verified to prevent false positives.'),
-      feature('Optimized for Scale', 'Efficient checks to handle hundreds of players without server lag.')
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Detection Layers')
+    ),
+
+    e('section', { className: 'detection-layers' },
+      detectionLayer('Movement Validation', 'Trajectory prediction, acceleration analysis, and pattern recognition for physics-based exploit detection'),
+      detectionLayer('Remote Protection', 'Automatic rate limiting, argument validation, and blacklist pattern detection for remote events'),
+      detectionLayer('Character Analysis', 'Health overflow detection, state validation, and tool/equipment monitoring'),
+      detectionLayer('Behavioral Scoring', 'Suspicion scoring system with decay to build evidence over time')
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Advanced Features')
+    ),
+
+    e('section', { className: 'features-grid' },
+      feature('Suspicion Scoring', '0-100 point system with automatic decay. Build evidence over time instead of immediate bans.'),
+      feature('Webhook Notifications', 'Discord webhook integration with proxy support for real-time alerts on suspicious activity.'),
+      feature('Client-Side GUI', 'Visual loading indicators and detection alerts in bottom-right corner (optional).'),
+      feature('BanAsync Integration', 'Universe-wide permanent bans using Roblox\'s official ban system.'),
+      feature('Grace Periods', 'Configurable grace periods for teleports, respawns, and scripted events.'),
+      feature('Whitelist System', 'User ID, group ID, and game pass whitelisting for trusted players.')
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Security Principles')
+    ),
+
+    e('section', { className: 'principles' },
+      principle('Server Authority Only', 'All security decisions made server-side. Never trust client-side values.'),
+      principle('Evidence-Based Detection', 'Suspicion scoring prevents false positives from network latency.'),
+      principle('Platform Aligned', 'Built on Roblox Dev Forum security documentation and best practices.'),
+      principle('Performance First', 'Optimized for large servers without frame drops or increased latency.'),
+      principle('Modular Design', 'Use only what you need. Each component is independent and configurable.')
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Response System')
+    ),
+
+    e('section', { className: 'response-system' },
+      responseItem('Suspicion Score 0-49', 'Monitoring only. No action taken.'),
+      responseItem('Suspicion Score 50-79', 'Increased monitoring. Webhook alerts if enabled.'),
+      responseItem('Suspicion Score 80-94', 'Player kicked with reason. Cooldown applied.'),
+      responseItem('Suspicion Score 95-100', 'Player banned via BanAsync. Universe-wide ban.')
     ),
 
     e('div', { className: 'notice' },
-      'MIT Licensed. Attribution required when reusing. Built with security and performance in mind.'
+      'USM follows Roblox Dev Forum security best practices. All detection methods are server-authoritative and designed to minimize false positives.'
     )
   );
 }
@@ -177,6 +307,27 @@ function feature(title, desc) {
   return e('div', { className: 'card' },
     e('h3', null, title),
     e('p', null, desc)
+  );
+}
+
+function detectionLayer(title, desc) {
+  return e('div', { className: 'detection-item' },
+    e('h4', null, title),
+    e('p', null, desc)
+  );
+}
+
+function principle(title, desc) {
+  return e('div', { className: 'principle-item' },
+    e('h4', null, title),
+    e('p', null, desc)
+  );
+}
+
+function responseItem(score, action) {
+  return e('div', { className: 'response-item' },
+    e('div', { className: 'response-score' }, score),
+    e('div', { className: 'response-action' }, action)
   );
 }
 

@@ -1,0 +1,27 @@
+{
+  "version": "2026.2.0",
+  "versionName": "v2026.2",
+  "releaseDate": "2026-06-14",
+  "changelog": [
+    "Added modular architecture with separate components",
+    "Implemented suspicion scoring system with decay",
+    "Added webhook notification support with Discord integration",
+    "Created client-side GUI for loading status and detection alerts",
+    "Added BanAsync integration for universe-wide bans",
+    "Implemented movement validation with trajectory prediction",
+    "Added remote event protection with rate limiting",
+    "Created comprehensive configuration system",
+    "Updated documentation and website"
+  ],
+  "critical": false,
+  "downloadUrl": "https://github.com/hacvilke/usm-security/releases/latest",
+  "minCompatibleVersion": "2026.1.0",
+  "modules": {
+    "USM_Configuration": "2026.2.0",
+    "USM_Main_AntiCheat": "2026.2.0",
+    "USM_Movement_Validator": "2026.2.0",
+    "USM_Remote_Protection": "2026.2.0",
+    "USM_Client_GUI": "2026.2.0",
+    "USM_Client_Validator": "2026.2.0"
+  }
+}

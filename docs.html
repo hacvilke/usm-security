@@ -110,6 +110,194 @@
     }
 
     footer { padding: 48px 32px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #6b7280; font-size: 14px; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #e5e7eb;
+    }
+
+    .install-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .install-step {
+      display: flex;
+      gap: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(99,102,241,0.2);
+      color: #a5b4fc;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    .config-sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .config-item {
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+    }
+
+    .config-item h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #e5e7eb;
+    }
+
+    .config-item pre {
+      background: rgba(0,0,0,0.3);
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #d1d5db;
+      overflow-x: auto;
+    }
+
+    .api-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+
+    .api-item {
+      padding: 20px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 12px;
+    }
+
+    .api-item code {
+      display: block;
+      font-size: 13px;
+      color: #a5b4fc;
+      margin-bottom: 8px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .api-item p {
+      font-size: 14px;
+      color: #9ca3af;
+    }
+
+    .practices-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+
+    .practice-item {
+      padding: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+    }
+
+    .practice-item h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+
+    .practice-item p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    .troubleshoot {
+      max-width: 800px;
+      margin: 0 auto 64px;
+    }
+
+    .troubleshoot-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .troubleshoot-issue {
+      flex: 1;
+      font-weight: 600;
+      color: #fca5a5;
+    }
+
+    .troubleshoot-solution {
+      flex: 2;
+      color: #9ca3af;
+    }
+
+    .faq {
+      max-width: 800px;
+      margin: 0 auto 64px;
+    }
+
+    .faq-item {
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: #e5e7eb;
+      margin-bottom: 12px;
+    }
+
+    .faq-answer {
+      color: #9ca3af;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -140,60 +328,139 @@ const e = React.createElement;
 function App() {
   return e('div', null,
     e('section', { className: 'hero' },
-      e('div', { className: 'tag' }, 'GUIDES & DOCUMENTATION'),
-      e('h2', null, 'USM Docs'),
+      e('div', { className: 'tag' }, 'DOCUMENTATION v2026.2'),
+      e('h2', null, 'USM Documentation'),
       e('p', null,
-        'Everything you need to know to integrate USM, prevent exploits, and maintain trust with your players.'
+        'Comprehensive guide for integrating and configuring Universal Security Module in your Roblox game.'
       )
     ),
 
-    e('section', { className: 'grid' },
-      feature('1. Installation & Setup', `
-1. Download the latest USM package from the download page.
-2. Place the module in your Roblox game's ServerScriptService.
-3. Require the module in a Script:
-\`\`\`lua
-local USM = require(game.ServerScriptService.USM)
-USM:Init()
-\`\`\`
-4. Adjust optional configuration as needed.
-`),
-      feature('2. Simple Hack Catcher', `
-USM provides basic exploit detection. Example:
-\`\`\`lua
-USM.OnExploitDetected:Connect(function(player, reason)
-    print(player.Name .. " triggered USM detection: " .. reason)
-    -- Optional: kick or log player
-    player:Kick("Exploit detected: " .. reason)
-end)
-\`\`\`
-This ensures suspicious behavior is logged and handled safely.
-`),
-      feature('3. Trust & Best Practices', `
-- Only trust server-authoritative values.
-- Avoid trusting client inputs directly.
-- Regularly update USM to get new exploit rules.
-- Monitor suspicious activity but avoid false positives.
-- Keep communication clear with your player base to build trust.
-`),
-      feature('4. Advanced Features', `
-- Acceleration-Based Detection
-- Fly & No-Clip Protection
-- Strike Decay System
-- Universe Ban Support
-- Teleport Grace Windows
-- Optimized for Scale
-- Customizable logging & alerts
-`),
-      feature('5. Resources & Support', `
-- Official Discord: https://discord.gg/SR2Gfrh5FE
-- GitHub / Open-source MIT license: Attribution required
-- Tutorials & guides available in future updates
-`)
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Quick Installation')
+    ),
+
+    e('section', { className: 'install-steps' },
+      e('div', { className: 'install-step' },
+        e('div', { className: 'step-number' }, '1'),
+        e('div', { className: 'step-content' },
+          e('h4', null, 'Download Modules'),
+          e('p', null, 'Download all USM modules from the download page.')
+        )
+      ),
+      e('div', { className: 'install-step' },
+        e('div', { className: 'step-number' }, '2'),
+        e('div', { className: 'step-content' },
+          e('h4', null, 'Place in Game'),
+          e('code-block', null, `
+ServerScriptService → USM_Configuration.lua
+ServerScriptService → USM_Main_AntiCheat.lua
+ServerScriptService → USM_Movement_Validator.lua
+ServerScriptService → USM_Remote_Protection.lua
+StarterPlayerScripts → USM_Client_GUI.lua
+          `)
+        )
+      ),
+      e('div', { className: 'install-step' },
+        e('div', { className: 'step-number' }, '3'),
+        e('div', { className: 'step-content' },
+          e('h4', null, 'Configure'),
+          e('p', null, 'Edit USM_Configuration.lua to customize thresholds and behaviors for your game.')
+        )
+      ),
+      e('div', { className: 'install-step' },
+        e('div', { className: 'step-number' }, '4'),
+        e('div', { className: 'step-content' },
+          e('h4', null, 'Test & Deploy'),
+          e('p', null, 'Test with whitelist enabled, monitor logs, then deploy to production.')
+        )
+      )
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Configuration Guide')
+    ),
+
+    e('section', { className: 'config-sections' },
+      configSection('Punishment System', `
+KickThreshold = 80      -- Suspicion score to kick player
+BanThreshold = 95      -- Suspicion score to ban player
+ScoreDecayRate = 0.5   -- Points lost per second
+UseBanAsync = true     -- Use universe-wide bans
+BanDuration = 604800   -- 7 days (nil = permanent)
+      `),
+      configSection('Movement Validation', `
+MaxSpeedMultiplier = 2.5      -- Multiplier of WalkSpeed
+MaxTeleportDistance = 50     -- Studs
+MaxAirTime = 3.0             -- Seconds in air
+MaxJumpHeight = 50           -- Studs
+MaxAcceleration = 100        -- Studs/second²
+      `),
+      configSection('Remote Events', `
+MaxCallsPerSecond = 20       -- Rate limit per player
+MaxArgumentSize = 1000       -- Characters per argument
+BlacklistedPatterns = {      -- Exploit patterns to block
+    "require", "getfenv", "setfenv"
+}
+      `),
+      configSection('Webhook Notifications', `
+Enabled = false
+URL = ""                     -- Your Discord webhook URL
+UseProxy = true              -- Use proxy service for security
+NotifyOnKick = true
+NotifyOnBan = true
+HighSuspicionThreshold = 70
+      `)
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'API Reference')
+    ),
+
+    e('section', { className: 'api-section' },
+      apiMethod('AddSuspicion(player, amount, reason)', 'Manually add suspicion to a player'),
+      apiMethod('SetGracePeriod(player, graceType, duration)', 'Set a grace period for a player'),
+      apiMethod('IsWhitelisted(player)', 'Check if a player is whitelisted'),
+      apiMethod('SendWebhookNotification(player, eventType, details)', 'Send webhook notification')
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Best Practices')
+    ),
+
+    e('section', { className: 'practices-list' },
+      practice('Server Authority Only', 'Never trust client-side values for security decisions'),
+      practice('Test Thoroughly', 'Test with whitelist enabled before production deployment'),
+      practice('Monitor Logs', 'Regularly review detection logs for false positives'),
+      practice('Adjust Thresholds', 'Customize settings based on your game\'s mechanics'),
+      practice('Handle Appeals', 'Provide a way for players to appeal bans'),
+      practice('Stay Updated', 'Keep USM updated with latest releases')
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Troubleshooting')
+    ),
+
+    e('section', { className: 'troubleshoot' },
+      troubleshootItem('False Positives on Speed Checks', 'Increase MaxSpeedMultiplier or add grace periods for specific game mechanics'),
+      troubleshootItem('Legitimate Teleports Flagged', 'Use SetGracePeriod(player, "teleport", duration) after scripted teleports'),
+      troubleshootItem('Remote Events Blocked', 'Add legitimate patterns to whitelist or adjust MaxCallsPerSecond'),
+      troubleshootItem('High Server Load', 'Increase detection intervals or disable non-essential modules')
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'FAQ')
+    ),
+
+    e('section', { className: 'faq' },
+      faqItem('Does USM work on the client?', 'No. USM is server-side only. The client script only collects data for server verification.'),
+      faqItem('Will USM ban legitimate players?', 'USM uses suspicion scoring to build evidence over time, reducing false positives from network lag.'),
+      faqItem('Can I customize the detection methods?', 'Yes. All thresholds and behaviors are configurable in USM_Configuration.lua.'),
+      faqItem('Does USM support universe-wide bans?', 'Yes. USM integrates with Roblox\'s BanAsync for universe-wide permanent bans.'),
+      faqItem('Is USM free to use?', 'Yes. USM is MIT licensed and free for both personal and commercial use.')
     ),
 
     e('div', { className: 'notice' },
-      'USM Docs v2026.2 • MIT Licensed. Integration recommended by following these steps carefully to ensure maximum security.'
+      'For detailed API documentation and examples, see the README.md file in the downloads package.'
     )
   );
 }
@@ -202,6 +469,41 @@ function feature(title, desc) {
   return e('div', { className: 'card' },
     e('h3', null, title),
     e('p', null, desc)
+  );
+}
+
+function configSection(title, code) {
+  return e('div', { className: 'config-item' },
+    e('h4', null, title),
+    e('pre', null, code.trim())
+  );
+}
+
+function apiMethod(signature, description) {
+  return e('div', { className: 'api-item' },
+    e('code', null, signature),
+    e('p', null, description)
+  );
+}
+
+function practice(title, description) {
+  return e('div', { className: 'practice-item' },
+    e('h4', null, title),
+    e('p', null, description)
+  );
+}
+
+function troubleshootItem(issue, solution) {
+  return e('div', { className: 'troubleshoot-item' },
+    e('div', { className: 'troubleshoot-issue' }, issue),
+    e('div', { className: 'troubleshoot-solution' }, solution)
+  );
+}
+
+function faqItem(question, answer) {
+  return e('div', { className: 'faq-item' },
+    e('div', { className: 'faq-question' }, question),
+    e('div', { className: 'faq-answer' }, answer)
   );
 }
 

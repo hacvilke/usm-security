@@ -112,6 +112,183 @@
     }
 
     footer { padding: 48px 32px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #6b7280; font-size: 14px; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #e5e7eb;
+    }
+
+    .mission {
+      max-width: 800px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+
+    .mission p {
+      font-size: 16px;
+      color: #9ca3af;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .principle-item {
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+    }
+
+    .principle-item h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #e5e7eb;
+    }
+
+    .principle-item p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    .tech-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+
+    .tech-item {
+      padding: 20px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .tech-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #a5b4fc;
+      margin-bottom: 8px;
+    }
+
+    .tech-desc {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    .history {
+      max-width: 800px;
+      margin: 0 auto 64px;
+    }
+
+    .history-item {
+      display: flex;
+      gap: 24px;
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+
+    .history-year {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(99,102,241,0.2);
+      color: #a5b4fc;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .history-content h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+
+    .history-content p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    .license {
+      max-width: 800px;
+      margin: 0 auto 64px;
+    }
+
+    .license-box {
+      padding: 32px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+    }
+
+    .license-box h4 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #e5e7eb;
+    }
+
+    .license-box p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .license-box ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 16px;
+    }
+
+    .license-box li {
+      font-size: 14px;
+      color: #9ca3af;
+      padding: 8px 0;
+    }
+
+    .license-note {
+      font-size: 13px;
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    .acknowledgments {
+      max-width: 800px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+
+    .acknowledgments p {
+      font-size: 15px;
+      color: #9ca3af;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
   </style>
 </head>
 <body>
@@ -142,24 +319,106 @@ const e = React.createElement;
 function App() {
   return e('div', null,
     e('section', { className: 'hero' },
-      e('div', { className: 'tag' }, 'MEET THE TEAM'),
+      e('div', { className: 'tag' }, 'OPEN SOURCE • MIT LICENSED'),
       e('h2', null, 'About USM'),
       e('p', null,
-        'Universal Security Module is developed by thisperson with a focus on safe, performant, and reliable server-side Roblox security. Our mission is to empower developers to protect their games from exploits and cheats while keeping gameplay fair.'
+        'Universal Security Module is an open-source server-side anti-exploit framework for Roblox developers. Built on Roblox Dev Forum best practices, USM provides comprehensive protection while maintaining performance and fairness.'
       )
     ),
 
-    e('section', { className: 'grid' },
-      feature('Our Mission', 'Deliver robust server-side security and maintain trust with honest players.'),
-      feature('Why USM?', 'Combines anti-cheat, exploit prevention, and scalable performance in one lightweight package.'),
-      feature('Community & Support', 'We value developer feedback and provide guides, updates, and assistance for integration.'),
-      feature('Open Source', 'MIT licensed with full transparency. Attribution is required for reuse.'),
-      feature('Continuous Updates', 'We monitor new exploits and regularly update USM to ensure protection.'),
-      feature('Performance Focus', 'Designed to minimize server load while maximizing security checks.')
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Our Mission')
+    ),
+
+    e('section', { className: 'mission' },
+      e('p', null,
+        'USM was created to address the growing need for robust, server-authoritative security in Roblox games. Our mission is to provide developers with enterprise-grade protection that is accessible, customizable, and aligned with platform security guidelines.'
+      ),
+      e('p', null,
+        'We believe that security should not come at the cost of player experience. USM is designed to detect actual exploit behavior patterns rather than relying on simple checks that can be bypassed or cause false positives.'
+      )
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Core Principles')
+    ),
+
+    e('section', { className: 'principles-grid' },
+      principle('Server Authority', 'All security decisions are made server-side. We never trust client-side values.'),
+      principle('Evidence-Based Detection', 'Suspicion scoring builds evidence over time. No false positives from network latency.'),
+      principle('Platform Aligned', 'Built on Roblox Dev Forum security documentation and best practices.'),
+      principle('Performance First', 'Optimized for large servers without frame drops or increased latency.'),
+      principle('Modular Design', 'Use only what you need. Each component is independent and configurable.'),
+      principle('Community Driven', 'Open source with transparent development and community feedback.')
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Technology Stack')
+    ),
+
+    e('section', { className: 'tech-stack' },
+      techItem('Lua/Luau', 'Roblox\'s scripting language'),
+      techItem('ServerScriptService', 'Server-side script execution'),
+      techItem('BanService', 'Official Roblox ban API'),
+      techItem('DataStoreService', 'Logging and persistence'),
+      techItem('HTTPService', 'Webhook notifications'),
+      techItem('RunService', 'Heartbeat-based detection loops')
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Project History')
+    ),
+
+    e('section', { className: 'history' },
+      e('div', { className: 'history-item' },
+        e('div', { className: 'history-year' }, '2026'),
+        e('div', { className: 'history-content' },
+          e('h4', null, 'v2026.2 Release'),
+          e('p', null, 'Major rewrite with modular architecture, suspicion scoring, webhook notifications, and client-side GUI.')
+        )
+      ),
+      e('div', { className: 'history-item' },
+        e('div', { className: 'history-year' }, '2026'),
+        e('div', { className: 'history-content' },
+          e('h4', null, 'Project Inception'),
+          e('p', null, 'USM created to address the need for server-authoritative security aligned with Roblox Dev Forum guidelines.')
+        )
+      )
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'License & Usage')
+    ),
+
+    e('section', { className: 'license' },
+      e('div', { className: 'license-box' },
+        e('h4', null, 'MIT License'),
+        e('p', null, 'USM is licensed under the MIT License. You are free to use, modify, and distribute this software for both personal and commercial projects.'),
+        e('ul', null,
+          e('li', null, '✓ Commercial use allowed'),
+          e('li', null, '✓ Modification allowed'),
+          e('li', null, '✓ Distribution allowed'),
+          e('li', null, '✓ Private use allowed')
+        ),
+        e('p', { className: 'license-note' }, 'Attribution is appreciated but not required. However, removing or misrepresenting authorship is discouraged.')
+      )
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Acknowledgments')
+    ),
+
+    e('section', { className: 'acknowledgments' },
+      e('p', null,
+        'USM is built on the collective knowledge of the Roblox development community. We acknowledge the Roblox Dev Forum security documentation, community discussions on anti-cheat best practices, and all developers who have contributed to making the platform safer.'
+      ),
+      e('p', null,
+        'Special thanks to the Roblox security team for providing comprehensive documentation and guidelines that inform our approach to server-side security.'
+      )
     ),
 
     e('div', { className: 'notice' },
-      'MIT Licensed. Attribution required when reusing. USM is built with security and trust as the top priority.'
+      'USM is open-source software. We welcome contributions, feedback, and community involvement. Together, we can make Roblox safer for everyone.'
     )
   );
 }
@@ -168,6 +427,20 @@ function feature(title, desc) {
   return e('div', { className: 'card' },
     e('h3', null, title),
     e('p', null, desc)
+  );
+}
+
+function principle(title, desc) {
+  return e('div', { className: 'principle-item' },
+    e('h4', null, title),
+    e('p', null, desc)
+  );
+}
+
+function techItem(name, desc) {
+  return e('div', { className: 'tech-item' },
+    e('div', { className: 'tech-name' }, name),
+    e('div', { className: 'tech-desc' }, desc)
   );
 }
 

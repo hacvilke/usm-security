@@ -185,6 +185,156 @@
       color: #6b7280;
       font-size: 14px;
     }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 14px 28px;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #6366f1;
+      color: #e5e7eb;
+    }
+
+    .btn-primary:hover {
+      background: #4f46e5;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: #e5e7eb;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+    }
+
+    .stat-value {
+      font-size: 32px;
+      font-weight: 800;
+      color: #a5b4fc;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: #9ca3af;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #e5e7eb;
+    }
+
+    .quick-start {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(99,102,241,0.2);
+      color: #a5b4fc;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .why-item {
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+    }
+
+    .why-item h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #e5e7eb;
+    }
+
+    .why-item p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    .cta-sub {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
   </style>
 </head>
 <body>
@@ -215,28 +365,92 @@ const e = React.createElement;
 function App() {
   return e('div', null,
     e('section', { className: 'hero' },
-      e('div', { className: 'tag' }, 'SERVER-SIDE • ANTI-EXPLOIT'),
+      e('div', { className: 'tag' }, 'v2026.2 • MIT LICENSED'),
       e('h2', null, 'Universal Security Module'),
       e('p', null,
-        'A hardened, server-authoritative anti-exploit framework for Roblox developers. Built for performance, accuracy, and long-term exploit resistance.'
+        'A hardened, server-authoritative anti-exploit framework for Roblox developers. Built for performance, accuracy, and long-term exploit resistance based on Roblox Dev Forum best practices.'
+      ),
+      e('div', { className: 'hero-buttons' },
+        e('a', { className: 'btn-primary', href: 'download.html' }, 'Get Started'),
+        e('a', { className: 'btn-secondary', href: 'docs.html' }, 'Documentation')
       )
     ),
 
+    e('section', { className: 'stats' },
+      stat('Modular Architecture', '6+ Components'),
+      stat('Detection Methods', '15+ Checks'),
+      stat('Server Authority', '100% Server-Side'),
+      stat('Ban Integration', 'Universe-Wide')
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Core Features')
+    ),
+
     e('section', { className: 'grid' },
-      feature('Acceleration-Based Detection', 'Detects impossible movement patterns instead of trusting client values.'),
-      feature('Fly & No-Clip Protection', 'Server-side ground raycasts and air-time validation.'),
-      feature('Strike Decay System', 'Lag-safe enforcement with intelligent escalation.'),
-      feature('Universe Ban Support', 'Automatic permanent bans using Roblox BanAsync.'),
-      feature('Teleport Grace Windows', 'No false positives from respawns or scripted teleports.'),
-      feature('Optimized For Scale', 'Designed for large servers without frame drops.')
+      feature('Suspicion Scoring System', 'Advanced 0-100 scoring with decay. Build evidence over time instead of immediate bans.'),
+      feature('Movement Validation', 'Trajectory prediction, acceleration analysis, and pattern recognition for advanced physics validation.'),
+      feature('Remote Event Protection', 'Automatic rate limiting, argument validation, and blacklist pattern detection.'),
+      feature('Webhook Notifications', 'Discord webhook integration with proxy support for real-time alerts on suspicious activity.'),
+      feature('Client-Side GUI', 'Visual loading indicators and detection alerts in bottom-right corner (optional).'),
+      feature('BanAsync Integration', 'Universe-wide permanent bans using Roblox\'s official ban system.')
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Quick Start')
+    ),
+
+    e('section', { className: 'quick-start' },
+      e('div', { className: 'step' },
+        e('div', { className: 'step-number' }, '1'),
+        e('div', { className: 'step-content' },
+          e('h4', null, 'Download Modules'),
+          e('p', null, 'Get all USM modules from the downloads page.')
+        )
+      ),
+      e('div', { className: 'step' },
+        e('div', { className: 'step-number' }, '2'),
+        e('div', { className: 'step-content' },
+          e('h4', null, 'Place in Game'),
+          e('p', null, 'Server scripts go in ServerScriptService, client script in StarterPlayerScripts.')
+        )
+      ),
+      e('div', { className: 'step' },
+        e('div', { className: 'step-number' }, '3'),
+        e('div', { className: 'step-content' },
+          e('h4', null, 'Configure'),
+          e('p', null, 'Edit USM_Configuration.lua to customize thresholds and behaviors.')
+        )
+      ),
+      e('div', { className: 'step' },
+        e('div', { className: 'step-number' }, '4'),
+        e('div', { className: 'step-content' },
+          e('h4', null, 'Test & Deploy'),
+          e('p', null, 'Test with whitelist enabled, then deploy to production.')
+        )
+      )
+    ),
+
+    e('section', { className: 'section-title' },
+      e('h3', null, 'Why USM?')
+    ),
+
+    e('section', { className: 'why-grid' },
+      whyItem('Server Authority', 'All security decisions made server-side. Never trust the client.'),
+      whyItem('Evidence-Based', 'Suspicion scoring builds evidence over time. No false positives from network lag.'),
+      whyItem('Modular Design', 'Use only what you need. Each component is independent and configurable.'),
+      whyItem('Dev Forum Aligned', 'Built on Roblox Dev Forum best practices and security documentation.'),
+      whyItem('Easy Integration', 'Drop-in installation with comprehensive configuration options.'),
+      whyItem('Active Development', 'Regular updates based on emerging exploit patterns.')
     ),
 
     e('div', { className: 'cta' },
-      e('a', { href: 'download.html' }, 'Download USM Now')
+      e('a', { href: 'download.html' }, 'Download USM v2026.2'),
+      e('p', { className: 'cta-sub' }, 'MIT Licensed • Free for Commercial Use')
     ),
 
     e('div', { className: 'notice' },
-      'MIT Licensed. Reuse permitted with attribution. Misrepresentation of authorship or branding is discouraged.'
+      'USM is open-source software. Attribution is appreciated but not required. This project follows Roblox Dev Forum security best practices.'
     )
   );
 }
@@ -244,6 +458,30 @@ function App() {
 function feature(title, desc) {
   return e('div', { className: 'card' },
     e('h3', null, title),
+    e('p', null, desc)
+  );
+}
+
+function stat(label, value) {
+  return e('div', { className: 'stat' },
+    e('div', { className: 'stat-value' }, value),
+    e('div', { className: 'stat-label' }, label)
+  );
+}
+
+function step(number, title, desc) {
+  return e('div', { className: 'step' },
+    e('div', { className: 'step-number' }, number),
+    e('div', { className: 'step-content' },
+      e('h4', null, title),
+      e('p', null, desc)
+    )
+  );
+}
+
+function whyItem(title, desc) {
+  return e('div', { className: 'why-item' },
+    e('h4', null, title),
     e('p', null, desc)
   );
 }

@@ -173,13 +173,33 @@ function App() {
     ),
 
     e('section', { className: 'grid' },
-      card('USM Stable Release',
-           'Recommended for live Roblox games. Fully tested, optimized, and production-safe.',
-           'downloads/usm-v2026.2.lua'),
+      card('USM Main Anti-Cheat',
+           'Advanced server-side anti-cheat with suspicion scoring, BanAsync integration, and behavioral analysis.',
+           'downloads/USM_Main_AntiCheat.lua'),
 
-      card('USM Developer Build',
-           'Latest features and detection logic. May include experimental systems.',
-           'downloads/usm-v2026.2.lua'),
+      card('USM Configuration',
+           'Centralized configuration module for all USM anti-cheat components. Customize thresholds and behaviors.',
+           'downloads/USM_Configuration.lua'),
+
+      card('USM Movement Validator',
+           'Specialized movement validation with trajectory prediction, acceleration analysis, and pattern recognition.',
+           'downloads/USM_Movement_Validator.lua'),
+
+      card('USM Remote Protection',
+           'Advanced remote event protection with rate limiting, argument validation, and exploit pattern detection.',
+           'downloads/USM_Remote_Protection.lua'),
+
+      card('USM Client GUI',
+           'Visual loading indicators and detection alerts in bottom-right corner. Optional and developer-configurable.',
+           'downloads/USM_Client_GUI.lua'),
+
+      card('USM Update Checker',
+           'Automatic GitHub update checking using version.json. Notifies when new versions are available.',
+           'downloads/USM_UpdateChecker.lua'),
+
+      card('Legacy USM v2026.2',
+           'Original single-file anti-cheat script. Recommended for simple setups only.',
+           'usm-v2026.2.lua'),
 
       card('Documentation Package',
            'Offline documentation, examples, and setup references.',
